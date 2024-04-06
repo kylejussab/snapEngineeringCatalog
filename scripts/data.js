@@ -32,7 +32,7 @@ let gamesData = [
         description: "After 100 years, Link wakes up alone in a world he doesn't remember. The legendary hero must explore a vast and dangerous land and regain his memories before Hyrule is lost forever."        
     },
     {
-        image: "assets/boxArt/theLastOfUs2.jpg",
+        image: "assets/boxArt/theLastOfUs2.png",
         title: "The Last of Us Part II",
         publisher: "assets/sonyInteractive.png",
         publisherText: "Sony Interactive Entertainment",
