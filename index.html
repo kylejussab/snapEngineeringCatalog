@@ -16,19 +16,38 @@
     <header class="main-header">
         <h1>Video Games</h1>
     </header>
+
+    <fieldset>
+        <p>Publisher</p>
+        <label><input type="checkbox" id="publisher-nintendo"> Nintendo</label>
+        <label><input type="checkbox" id="publisher-sony"> Sony</label>
+        <label><input type="checkbox" id="publisher-microsoft"> Microsoft</label>
+
+        <p>Platform</p>
+        <label><input type="checkbox" id="platform-windows"> Windows</label>
+        <label><input type="checkbox" id="platform-playstation4"> Playstation 4</label>
+        <label><input type="checkbox" id="platform-switch"> Switch</label>
+        <label><input type="checkbox" id="platform-playstation3"> Playstation 3</label>
+        <label><input type="checkbox" id="platform-xboxone"> Xbox One</label>
+        <label><input type="checkbox" id="platform-xboxseriesx/s"> Xbox Series X/S</label>
+
+        <p>Rating</p>
+        <label><input type="checkbox" id="stars-5"> 5 stars</label>
+        <label><input type="checkbox" id="stars-4"> 4 stars</label>
+        <label><input type="checkbox" id="stars-3"> 3 stars</label>
+        <label><input type="checkbox" id="stars-2"> 2 stars</label>
+        <label><input type="checkbox" id="stars-1"> 1 star</label>
+    </fieldset>
         
     <div class="all-game-cards" data-game-cards-container></div>
-
     <template data-game-template>
         <div class="card-container">
             <div class="card-content" style="flex-grow: 5">
                 <div data-img></div>
                 <h2 data-title></h2>
                 <div data-details class="card-details"></div>
-
-                <!-- <div data-publisher></div>
-                <div data-platform></div>
-                <p data-developer></p> -->
+                <div data-stars class="card-stars"></div>
+                <p data-rating></p>
                 <p data-genre></p>
                 <p data-price></p>
                 <p data-description></p>

@@ -20,6 +20,17 @@ html, body {
     max-height: 25px;
 }
 
+.card-stars {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    width: max-content;
+}
+
+.card-stars img {
+    max-height: 15px;
+}
+
 .card-container {
     border: 2px solid rgb(0,0,0);
     width: max-content;
