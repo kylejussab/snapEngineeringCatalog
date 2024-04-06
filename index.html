@@ -41,16 +41,29 @@
         
     <div class="all-game-cards" data-game-cards-container></div>
     <template data-game-template>
-        <div class="card-container">
-            <div class="card-content" style="flex-grow: 5">
+        <div class="card-container" data-card-container>
+            <div class="card-content">
                 <div data-img></div>
-                <h2 data-title></h2>
+                <div class="card-title-container">
+                    <h2 data-title class="card-title"></h2>
+                    <div class="card-rating-container">
+                        <div data-stars class="card-stars"></div>
+                        <p data-rating></p>
+                    </div>
+                </div>
                 <div data-details class="card-details"></div>
-                <div data-stars class="card-stars"></div>
-                <p data-rating></p>
-                <p data-genre></p>
-                <p data-price></p>
-                <p data-description></p>
+                <div class="card-genre-container">
+                    <p data-genre></p>
+                    <p> • </p>
+                    <p data-release></p>
+                </div>
+                <hr>
+                <p data-description class="card-description"></p>
+                <div class="card-price-container">
+                    <hr>
+                    <p data-price class="card-price"></p>
+                </div>
+                
             </div>   
         </div>
     </template>

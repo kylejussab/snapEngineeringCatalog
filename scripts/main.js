@@ -1,6 +1,7 @@
 const cardTemplate = document.querySelector("[data-game-template]");
 const gameCardContainer = document.querySelector("[data-game-cards-container]");
 
+
 // Helpers
 addImageElement = (div, data, className) => {
     const tempImage = document.createElement('img');
@@ -39,6 +40,14 @@ addStarRating = (div, stars, className) => {
     }
 }
 
+updateBackgroundImages = (filteredGames) => {
+    const cardContainers = document.querySelectorAll('.card-container');
+
+    for(let i = 0; i < filteredGames.length; i++){
+        cardContainers[i].style.backgroundImage = "url('/" + filteredGames[i].image + "')";
+    };
+};
+
 displayFilteredGames = (filteredGames) => {
     gameCardContainer.innerHTML = '';
 
@@ -52,7 +61,7 @@ displayFilteredGames = (filteredGames) => {
         const rating = card.querySelector("[data-rating]");
         const genre = card.querySelector("[data-genre]");
         const price = card.querySelector("[data-price]");
-        const image = card.querySelector("[data-img]");
+        const release = card.querySelector("[data-release]");
         const description = card.querySelector("[data-description]");
 
         title.textContent = post.title;
@@ -68,7 +77,7 @@ displayFilteredGames = (filteredGames) => {
         rating.textContent = "Rating: " + post.rating;
         genre.textContent = post.genre;
         price.textContent = post.price;
-        addImageElement(image, post.image, "card-image");
+        release.textContent = post.release;
         description.textContent = post.description;
 
         gameCardContainer.append(card);
@@ -98,6 +107,7 @@ applyFilters = () =>{
     });
 
     displayFilteredGames(filteredGames);
+    updateBackgroundImages(filteredGames);
 }
 
 //Add all event listeners

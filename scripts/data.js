@@ -1,8 +1,8 @@
 let gamesData = [
     {
-        image: "assets/box art/haloInfinite.webp",
+        image: "assets/boxArt/haloInfinite.jpeg",
         title: "Halo Infinite",
-        publisher: "assets/xboxGameStudios.jpeg",
+        publisher: "assets/xboxGameStudios.png",
         publisherText: "Microsoft Xbox Game Studios",
         platform: ["assets/xboxSeriesXS.png", "assets/xboxOne.png", "assets/windows.png"],
         platformText: "XboxSeriesX/S, XboxOne, Windows",
@@ -10,12 +10,13 @@ let gamesData = [
         developerText: "343 Industries",
         genre: "First-person shooter",
         price: "$59.99",
-        stars: 2.5,
+        release: 2021,
+        stars: 4.5,
         rating: "87%",
-        description: "Something"
+        description: "Dive into 'Halo Infinite,' the thrilling sci-fi adventure where you become the legendary Master Chief. With cutting-edge graphics and immersive gameplay, experience the next evolution of the iconic franchise."
     },
     {
-        image: "https://pbs.twimg.com/media/C2FlHhUXEAINy6w.jpg",
+        image: "assets/boxArt/breathOfTheWild.jpg",
         title: "The Legend of Zelda: Breath of the Wild",
         publisher: "assets/nintendo.png",
         publisherText: "Nintendo",
@@ -25,12 +26,13 @@ let gamesData = [
         developerText: "Nintendo EPD",
         genre: "Open world",
         price: "$59.99",
+        release: 2017,
         stars: 5,
         rating: "97%",
-        description: "Something"        
+        description: "After 100 years, Link wakes up alone in a world he doesn't remember. The legendary hero must explore a vast and dangerous land and regain his memories before Hyrule is lost forever."        
     },
     {
-        image: "https://howlongtobeat.com/games/41753_The_Last_of_Us_Part_II.jpg",
+        image: "assets/boxArt/theLastOfUs2.png",
         title: "The Last of Us Part II",
         publisher: "assets/sonyInteractive.png",
         publisherText: "Sony Interactive Entertainment",
@@ -40,8 +42,9 @@ let gamesData = [
         developerText: "Naughty Dog",
         genre: "Survival",
         price: "$59.99",
+        release: 2022,
         stars: 4.5,
         rating: "93%",        
-        description: "Something"
+        description: "Experience the devasting physical and emotional consequences of Ellie's vengeance as you embark on a relentless pursuit of those who've wronged her."
     }
 ];
