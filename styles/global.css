@@ -12,12 +12,49 @@ html, body {
     padding-bottom: 10px;
 }
 
-.card-image{
-    max-width: 15vw;
+.card-container {
+    background-size: cover;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    border-radius: 10px;
 }
 
-.card-details img {
-    max-height: 25px;
+.card-content {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+    padding-top: 30px;
+    padding-inline: 30px;
+
+    left: 15px;
+    top: 30px;
+    width: 42%;
+    height: 80%;
+}
+
+.card-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-rating-container p{
+    margin-top: 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.card-title {
+    margin-top: 0px;
+    width: 60%;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .card-stars {
@@ -31,7 +68,53 @@ html, body {
     max-height: 15px;
 }
 
-.card-container {
-    border: 2px solid rgb(0,0,0);
-    width: max-content;
+.card-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-details img {
+    max-height: 12px;
+}
+
+.card-genre-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.card-content hr {
+    margin-top: 0;
+    border: none;
+    border-top: 1px solid black;
+    margin-bottom: 12px;
+}
+
+.card-genre-container p {
+    font-size: 14px;
+}
+
+.card-description {
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+.card-price-container {
+    margin-top: 10px;
+    width: 55px;
+    text-align: right;
+    position: absolute;
+    right: 30px;
+}
+
+.card-price-container hr{
+    margin-bottom: 5px;
+}
+
+.card-price {
+    margin-top: 0;
+    text-align: right;
 }
