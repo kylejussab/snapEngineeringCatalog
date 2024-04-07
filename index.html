@@ -7,37 +7,139 @@
     <meta name="description" content="A Catalog of video games">
     <link rel="stylesheet" href="styles/global.css"/>
     <script type="text/javascript" src="scripts/data.js" defer></script>
+    <script type="text/javascript" src="scripts/menuToggle.js" defer></script>
+    <script type="text/javascript" src="scripts/sort.js" defer></script>
     <script type="text/javascript" src="scripts/main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <title>Video Game Catalog | Home</title>
     <link rel="icon" href="assets/icon.png">
 </head>
 
 <body>
     <header class="main-header">
-        <h1>Video Games</h1>
+        <div class="page-title-container">
+            <img src="assets/icon.png" class="video-game-icon">
+            <h1>Video Game</h1>
+            <h1 class="h1-lighter-weight">Catalogue</h1>
+        </div>
+
+        <img src="assets/snapAcademyLogo.png" class="snap-academies-logo">
     </header>
 
-    <fieldset>
-        <p>Publisher</p>
-        <label><input type="checkbox" id="publisher-nintendo"> Nintendo</label>
-        <label><input type="checkbox" id="publisher-sony"> Sony</label>
-        <label><input type="checkbox" id="publisher-microsoft"> Microsoft</label>
+    <div class="sort-filter-button" onclick="openFilterMenu()">
+        <img src="assets/filterIcon.png">
+        <div class="rotateText">Filters</div>
+    </div>
 
-        <p>Platform</p>
-        <label><input type="checkbox" id="platform-windows"> Windows</label>
-        <label><input type="checkbox" id="platform-playstation4"> Playstation 4</label>
-        <label><input type="checkbox" id="platform-switch"> Switch</label>
-        <label><input type="checkbox" id="platform-playstation3"> Playstation 3</label>
-        <label><input type="checkbox" id="platform-xboxone"> Xbox One</label>
-        <label><input type="checkbox" id="platform-xboxseriesx/s"> Xbox Series X/S</label>
+    <div class="sort-filter-container">
+        <div class="filter-container">
+            <div class="sort-filter-heading-container">
+                <h3 class="sort-filter-heading">Filter</h3>
+                <button id="resetFilters">Reset</button>
+            </div>
+            
+            <fieldset class="collapsible">
+                <p class="sort-filter-subheading">
+                    <img id="publisher-arrow-down" src="assets/arrowDown.png" class="sort-filter-arrow">
+                    <img id="publisher-arrow-up" src="assets/arrowUp.png" class="sort-filter-arrow">
+                    Publisher
+                </p>
+                
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="publisher-nintendo"> Nintendo</label>
+                    <label><input type="checkbox" id="publisher-sony"> Sony</label>
+                    <label><input type="checkbox" id="publisher-microsoft"> Microsoft</label>
+                </div>
+            </fieldset>
+        
+            <fieldset class="collapsible">
+                <p class="sort-filter-subheading">
+                    <img id="platform-arrow-down" src="assets/arrowDown.png" class="sort-filter-arrow">
+                    <img id="platform-arrow-up" src="assets/arrowUp.png" class="sort-filter-arrow">
+                    Platform
+                </p>
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="platform-windows"> Windows</label>
+                    <label><input type="checkbox" id="platform-playstation5"> Playstation 5</label>
+                    <label><input type="checkbox" id="platform-playstation4"> Playstation 4</label>
+                    <label><input type="checkbox" id="platform-xboxseriesx/s"> Xbox Series X/S</label>
+                    <label><input type="checkbox" id="platform-xboxone"> Xbox One</label>
+                    <label><input type="checkbox" id="platform-switch"> Switch</label>
+                </div>
+            </fieldset>
+        
+            <fieldset class="collapsible">
+                <p class="sort-filter-subheading">
+                    <img id="rating-arrow-down" src="assets/arrowDown.png" class="sort-filter-arrow">
+                    <img id="rating-arrow-up" src="assets/arrowUp.png" class="sort-filter-arrow">
+                    Rating
+                </p>
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="stars-5"> 5 stars</label>
+                    <label><input type="checkbox" id="stars-4"> 4 stars</label>
+                    <label><input type="checkbox" id="stars-3"> 3 stars</label>
+                    <label><input type="checkbox" id="stars-2"> 2 stars</label>
+                    <label><input type="checkbox" id="stars-1"> 1 star</label>
+                </div>
+            </fieldset>
+        
+            <fieldset class="collapsible">
+                <p class="sort-filter-subheading">
+                    <img id="price-arrow-down" src="assets/arrowDown.png" class="sort-filter-arrow">
+                    <img id="price-arrow-up" src="assets/arrowUp.png" class="sort-filter-arrow">
+                    Price Range
+                </p>
+                <div class="price-input-container">
+                    <label for="minPrice">$</label>
+                    <input type="number" id="minPrice" value=0 placeholder="0">
+                </div>
+                
+                <div class="price-input-container">
+                    <label class="right-input" for="maxPrice">$</label>
+                    <input class="right-input" type="number" id="maxPrice" value=100 placeholder="100">
+                </div>
+            </fieldset>
+        </div>
 
-        <p>Rating</p>
-        <label><input type="checkbox" id="stars-5"> 5 stars</label>
-        <label><input type="checkbox" id="stars-4"> 4 stars</label>
-        <label><input type="checkbox" id="stars-3"> 3 stars</label>
-        <label><input type="checkbox" id="stars-2"> 2 stars</label>
-        <label><input type="checkbox" id="stars-1"> 1 star</label>
-    </fieldset>
+        <hr>
+
+        <div class="sort-container">
+            <div class="sort-filter-heading-container">
+                <h3 class="sort-filter-heading">Sort</h3>
+                <button id="resetSort">Reset</button>
+            </div>
+
+            <div class="non-collapsible">
+                <p class="sort-filter-subheading">by title</p>
+                <select id="titleSort">
+                    <option value="none" selected>None</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+
+            <div class="non-collapsible">
+                <p class="sort-filter-subheading">by price</p>
+                <select id="priceSort">
+                    <option value="none" selected>None</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+
+            <div class="non-collapsible">
+                <p class="sort-filter-subheading">by rating</p>
+                <select id="ratingSort">
+                    <option value="none" selected>None</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </div>
+    </div>
         
     <div class="all-game-cards" data-game-cards-container></div>
     <template data-game-template>
