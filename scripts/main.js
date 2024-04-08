@@ -46,7 +46,7 @@ updateBackgroundImages = (filteredGames) => {
     const cardContainers = document.querySelectorAll('.card-container');
 
     for(let i = 0; i < filteredGames.length; i++){
-        cardContainers[i].style.backgroundImage = "url('/" + filteredGames[i].image + "')";
+        cardContainers[i].style.backgroundImage = "url('" + filteredGames[i].image + "')";
     };
 };
 
