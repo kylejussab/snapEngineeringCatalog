@@ -2,7 +2,7 @@
 
 This project is part of the Snap Engineering Academy application process for 2024. This website allows users to browse and explore a catalog of video games, providing detailed information about each game, including title, publisher, developer, genre, price, release year, rating, and description.
 
-View the live site here: [https://kylejussab.github.io/snapEngineeringCatalog/]
+View the live site here: https://kylejussab.github.io/snapEngineeringCatalog/
 
 ## Features
 
