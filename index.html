@@ -10,11 +10,13 @@
     <script type="text/javascript" src="scripts/menuToggle.js" defer></script>
     <script type="text/javascript" src="scripts/sort.js" defer></script>
     <script type="text/javascript" src="scripts/main.js" defer></script>
+    <script type="text/javascript" src="scripts/search.js" defer></script>
+    <script type="text/javascript" src="scripts/edit.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <title>Video Game Catalog | Home</title>
+    <title>SnapLibrary Games | Home</title>
     <link rel="icon" href="assets/icon.png">
 </head>
 
@@ -22,9 +24,17 @@
     <header class="main-header">
         <div class="page-title-container">
             <img src="assets/icon.png" class="video-game-icon">
-            <h1>Video Game</h1>
-            <h1 class="h1-lighter-weight">Catalogue</h1>
+            <h1>SnapLibrary</h1>
+            <h1 class="h1-lighter-weight">Games</h1>
         </div>
+
+        <div class="search-container">
+            <img src="assets/searchIcon.png" id="search-icon">
+            <input type="text" id="search-input" placeholder="Search...">
+            <img src="assets/closeIcon.png" id="clearButton">
+            <button id="searchButton">Search</button>
+        </div>
+        
 
         <img src="assets/snapAcademyLogo.png" class="snap-academies-logo">
     </header>
@@ -65,7 +75,7 @@
                     <label><input type="checkbox" id="platform-windows"> Windows</label>
                     <label><input type="checkbox" id="platform-playstation5"> Playstation 5</label>
                     <label><input type="checkbox" id="platform-playstation4"> Playstation 4</label>
-                    <label><input type="checkbox" id="platform-xboxseriesx/s"> Xbox Series X/S</label>
+                    <label><input type="checkbox" id="platform-xboxseriesxs"> Xbox Series X/S</label>
                     <label><input type="checkbox" id="platform-xboxone"> Xbox One</label>
                     <label><input type="checkbox" id="platform-switch"> Switch</label>
                 </div>
@@ -165,9 +175,71 @@
                     <hr>
                     <p data-price class="card-price"></p>
                 </div>
-                
-            </div>   
+            </div>
+            
+            <div class="delete-button"><img src="assets/deleteIcon.png"></div>
         </div>
     </template>
+
+    <form id="game-form" class="add-card-form">
+        <h3>Add new game</h3>
+
+        <div class="form-input-container">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required><br>
+        </div>
+        
+        <div class="form-input-container">
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher" name="publisher" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="platform">Platform:</label>
+            <input type="text" id="platform" name="platform" required><br>
+        </div>
+        
+        <div class="form-input-container">
+            <label for="developer">Developer:</label>
+            <input type="text" id="developer" name="developer" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" min="0" step="0.01" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="release">Release:</label>
+            <input type="number" id="release" name="release" min="1000" max="9999" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="stars">Stars:</label>
+            <input type="number" id="stars" name="stars" min="0" max="5" step="0.5" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" min="0" max="100" required><br>
+        </div>
+
+        <div class="form-input-container">
+            <label for="description">Description:</label>
+            <textarea type="text" id="description" name="description" required></textarea><br>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <footer>
+        <p>This website was designed and developed by Kyle Jussab for the Snap Engineering Academy of 2024. The content on this page is not owned by me and is used solely for the purpose of the Snap Engineering Academy application process. No commercial use is intended, and all rights to the content belong to their respective owners.</p>
+    </footer>
 </body>
 </html>

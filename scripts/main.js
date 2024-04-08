@@ -1,3 +1,6 @@
+// Handles filtering and searching
+// Also handles displaying cards after filtered and searched
+
 const cardTemplate = document.querySelector("[data-game-template]");
 const gameCardContainer = document.querySelector("[data-game-cards-container]");
 
