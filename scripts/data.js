@@ -1,6 +1,6 @@
 let gamesData = [
     {
-        image: "assets/boxArt/theLastOfUs2.png",
+        image: "assets/theLastOfUs2.png",
         title: "The Last of Us Part II Remastered",
         publisher: "assets/sonyinteractiveentertainment.png",
         publisherText: "Sony Interactive Entertainment",
@@ -16,7 +16,7 @@ let gamesData = [
         description: "Experience the devasting physical and emotional consequences of Ellie's vengeance as you embark on a relentless pursuit of those who've wronged her."
     },
     {
-        image: "assets/boxArt/superMarioBrosWonder.webp",
+        image: "assets/superMarioBrosWonder.webp",
         title: "Super Mario Bros Wonder",
         publisher: "assets/nintendo.png",
         publisherText: "Nintendo",
@@ -32,7 +32,7 @@ let gamesData = [
         description: "Jump into the unexpected with Mario. Classic Mario gameplay is turned on its head with the addition of Wonder Flowers in the Super Mario Bros Wonder game."
     },
     {
-        image: "assets/boxArt/theLastOfUs1.jpg",
+        image: "assets/theLastOfUs1.jpg",
         title: "The Last of Us Part I",
         publisher: "assets/sonyinteractiveentertainment.png",
         publisherText: "Sony Interactive Entertainment",
@@ -48,7 +48,7 @@ let gamesData = [
         description: "In a ravaged civilization, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie out of a military quarantine zone. However, what starts as a small job soon transforms into a brutal cross-country journey."
     },
     {
-        image: "assets/boxArt/forzaMotorsport.jpeg",
+        image: "assets/forzaMotorsport.jpeg",
         title: "Forza Motorsport",
         publisher: "assets/xboxGameStudios.png",
         publisherText: "Microsoft Xbox Game Studios",
@@ -64,7 +64,7 @@ let gamesData = [
         description: "Get behind the wheel of the world's most iconic cars and compete in intense races. Race 500+ cars including modern race cars across 20 living environments featuring dynamic time-of-day weather."
     },
     {
-        image: "assets/boxArt/forspoken.jpeg",
+        image: "assets/forspoken.jpeg",
         title: "Forspoken",
         publisher: "assets/squareEnix.png",
         publisherText: "Square Enix",
@@ -80,7 +80,7 @@ let gamesData = [
         description: "Mysteriously transported from New York City, Frey finds herself trapped in the land of Athia. A magical, sentient bracelet is inexplicably wrapped around her arm, and Frey discovers the ability to use magic to traverse the sprawling landscapes of Athia."
     },
     {
-        image: "assets/boxArt/godOfWarRagnarok.jpeg",
+        image: "assets/godOfWarRagnarok.jpeg",
         title: "God of War Ragnarok",
         publisher: "assets/sonyinteractiveentertainment.png",
         publisherText: "Sony Interactive Entertainment",
@@ -96,7 +96,7 @@ let gamesData = [
         description: "Embark on a mythic journey for answers before Ragnarök arrives in God of War Ragnarok. Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on and letting go."
     },
     {
-        image: "assets/boxArt/metroidDread.jpeg",
+        image: "assets/metroidDread.jpeg",
         title: "Metroid Dread",
         publisher: "assets/nintendo.png",
         publisherText: "Nintendo",
@@ -112,7 +112,7 @@ let gamesData = [
         description: "Samus’ story continues after the events of the Metroid™ Fusion game when she descends upon planet ZDR to investigate a mysterious transmission sent to the Galactic Federation."        
     },
     {
-        image: "assets/boxArt/haloInfinite.jpeg",
+        image: "assets/haloInfinite.jpeg",
         title: "Halo Infinite",
         publisher: "assets/xboxGameStudios.png",
         publisherText: "Microsoft Xbox Game Studios",
@@ -128,7 +128,7 @@ let gamesData = [
         description: "Dive into 'Halo Infinite,' the thrilling sci-fi adventure where you become the legendary Master Chief. With cutting-edge graphics and immersive gameplay, experience the next evolution of the iconic franchise."
     },
     {
-        image: "assets/boxArt/lifeIsStrangeTC.jpeg",
+        image: "assets/lifeIsStrangeTC.jpeg",
         title: "Life is Strange: True Colors",
         publisher: "assets/squareEnix.png",
         publisherText: "Square Enix",
@@ -144,7 +144,7 @@ let gamesData = [
         description: "Alex hides her supernatural ability to manipulate the emotions of others. When her brother dies in an accident, she embraces her volatile power to reveal dark secrets buried by the town."
     },
     {
-        image: "assets/boxArt/oriAndTheWillOfTheWisps.jpeg",
+        image: "assets/oriAndTheWillOfTheWisps.jpeg",
         title: "Ori and the Will of the Wisps",
         publisher: "assets/xboxGameStudios.png",
         publisherText: "Microsoft Xbox Game Studios",
@@ -160,7 +160,7 @@ let gamesData = [
         description: "Embark on an all-new adventure in a vast and exotic world where you'll encounter towering enemies and challenging puzzles on your quest to unravel Ori's true destiny."
     },
     {
-        image: "assets/boxArt/breathOfTheWild.jpg",
+        image: "assets/breathOfTheWild.jpg",
         title: "The Legend of Zelda: Breath of the Wild",
         publisher: "assets/nintendo.png",
         publisherText: "Nintendo",
@@ -176,7 +176,7 @@ let gamesData = [
         description: "After 100 years, Link wakes up alone in a world he doesn't remember. The legendary hero must explore a vast and dangerous land and regain his memories before Hyrule is lost forever."        
     },
     {
-        image: "assets/boxArt/unchartedLostLegacy.jpeg",
+        image: "assets/unchartedLostLegacy.jpeg",
         title: "Uncharted: The Lost Legacy",
         publisher: "assets/sonyinteractiveentertainment.png",
         publisherText: "Sony Interactive Entertainment",
