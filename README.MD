@@ -2,6 +2,8 @@
 
 This project is part of the Snap Engineering Academy application process for 2024. This website allows users to browse and explore a catalog of video games, providing detailed information about each game, including title, publisher, developer, genre, price, release year, rating, and description.
 
+View the live site here: [https://kylejussab.github.io/snapEngineeringCatalog/]
+
 ## Features
 
 - Filtering and Sorting: Users can filter games based on various criteria such as publisher, platform, rating, and price range. They can also sort the displayed games by title, price, or rating. (A small box on the left hand side of the screen, hover over it and click it to open the filter and sort menu)
