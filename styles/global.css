@@ -631,6 +631,12 @@ footer p {
     left: 10px;
 }
 
+.edit-form {
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
 
 @media only screen and (max-width: 767px) {
     .main-header .video-game-icon {
