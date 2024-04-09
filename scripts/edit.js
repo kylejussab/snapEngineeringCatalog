@@ -81,7 +81,7 @@ document.getElementById('game-form').addEventListener('submit', function(event) 
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete-button')) {
         const button = event.target;
-        const cardContainer = button.closest('.card-container'); // Find the parent card container
+        const cardContainer = button.closest('.card-container');
         const title = cardContainer.querySelector(".card-title").textContent;
         const index = gamesData.findIndex(game => game.title === title);
         if (index !== -1){
@@ -92,4 +92,183 @@ document.addEventListener('click', function(event) {
             cardContainer.parentNode.removeChild(cardContainer);
         }
     }
+});
+
+//Edit content
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('edit-button')){
+        const button = event.target;
+        const cardContainer = button.closest('.card-container');
+        const title = cardContainer.querySelector(".card-title").textContent;
+        const index = gamesData.findIndex(game => game.title === title);
+        
+        cardContainer.querySelector(".edit-title").value = gamesData[index].title;
+        cardContainer.querySelector(".edit-publisher").value = gamesData[index].publisherText;
+        cardContainer.querySelector(".edit-platform").value = gamesData[index].platformText.split(',')[0];
+        cardContainer.querySelector(".edit-developer").value = gamesData[index].developerText;
+        cardContainer.querySelector(".edit-genre").value = gamesData[index].genre;
+        cardContainer.querySelector(".edit-price").value = parseFloat(gamesData[index].price.replace("$", ""));
+        cardContainer.querySelector(".edit-release").value = gamesData[index].release;
+        cardContainer.querySelector(".edit-stars").value = gamesData[index].stars;
+        cardContainer.querySelector(".edit-rating").value = parseFloat(gamesData[index].rating.replace("%", ""));
+        cardContainer.querySelector(".edit-description").value = gamesData[index].description;
+
+        
+
+        //Show (or hide) the edit form
+        if(cardContainer.querySelector(".edit-form").style.display == 'block'){
+            cardContainer.querySelector(".edit-title").value = "";
+            cardContainer.querySelector(".edit-publisher").value = "";
+            cardContainer.querySelector(".edit-platform").value = "";
+            cardContainer.querySelector(".edit-developer").value = "";
+            cardContainer.querySelector(".edit-genre").value = "";
+            cardContainer.querySelector(".edit-price").value = "";
+            cardContainer.querySelector(".edit-release").value = "";
+            cardContainer.querySelector(".edit-stars").value = "";
+            cardContainer.querySelector(".edit-rating").value = "";
+            cardContainer.querySelector(".edit-description").value = "";
+            cardContainer.querySelector(".edit-form").style.display = 'none';
+
+            //Show the main content
+            cardContainer.querySelector(".card-content").style.display = 'block';
+        }
+        else{
+            cardContainer.querySelector(".edit-form").style.display = 'block';
+
+            //Hide the main content
+            cardContainer.querySelector(".card-content").style.display = 'none';
+        }
+    }
+});
+
+//Submit editted content
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('edit-submit-button')) {
+        const button = event.target;
+        const cardContainer = button.closest('.card-container');
+        const title = cardContainer.querySelector(".card-title").textContent;
+        const index = gamesData.findIndex(game => game.title === title);
+
+        //Check validation steps
+        if (!(/^\d{4}$/.test(cardContainer.querySelector(".edit-release").value))) {
+            alert("Release must be a 4-digit number.");
+            return;
+        };
+
+        if (cardContainer.querySelector(".edit-price").value < 0) {
+            alert("Price cannot be negative.");
+            return;
+        }
+
+        // Handles publisher, developer, and platform
+        let publisherText = cardContainer.querySelector(".edit-publisher").value;
+        let publisher;
+        let developerText = cardContainer.querySelector(".edit-developer").value;
+        let developer;
+        let platformText = cardContainer.querySelector(".edit-platform").value;
+        let platform;
+
+        const matchingPublisher = gamesData.find(game => game.publisherText.toLowerCase() === publisherText.toLowerCase());
+        const matchingDeveloper = gamesData.find(game => game.developerText.toLowerCase() === developerText.toLowerCase());
+        const matchingPlatform = gamesData.some(game => game.platformText.toLowerCase().includes(platformText.toLowerCase()));
+
+        if(!matchingPublisher){
+            publisherText = "unknownpublisher";
+            publisher = "assets/" + publisherText + ".png";
+        }
+        else{
+            publisher = "assets/" + publisherText.replace(/\s/g, '') + ".png";
+        }
+
+        if(!matchingDeveloper){
+            developerText = "unknowndeveloper";
+            developer = "assets/" + developerText + ".png";
+        }
+        else{
+            developer = "assets/" + developerText.replace(/\s/g, '') + ".png";
+        }
+
+        if(!matchingPlatform){
+            platformText = "unknownplatform";
+            platform = ["assets/" + platformText + ".png"];
+        }
+        else{
+            platform = ["assets/" + platformText + ".png"];
+        }
+
+
+        gamesData[index].title = cardContainer.querySelector(".edit-title").value;
+        cardContainer.querySelector(".edit-title").value = '';
+
+        gamesData[index].publisherText = cardContainer.querySelector(".edit-publisher").value;
+        cardContainer.querySelector(".edit-publisher").value = '';
+        gamesData[index].publisher = publisher;
+
+        gamesData[index].developerText = cardContainer.querySelector(".edit-developer").value;
+        cardContainer.querySelector(".edit-developer").value = '';
+        gamesData[index].developer = developer;
+
+        gamesData[index].platformText = cardContainer.querySelector(".edit-platform").value;
+        cardContainer.querySelector(".edit-platform").value = '';
+        gamesData[index].platform = platform;
+
+        gamesData[index].genre = cardContainer.querySelector(".edit-genre").value;
+        cardContainer.querySelector(".edit-genre").value = '';
+
+        gamesData[index].price = "$" + parseFloat(cardContainer.querySelector(".edit-price").value).toFixed(2);
+        cardContainer.querySelector(".edit-price").value = '';
+
+        gamesData[index].release = cardContainer.querySelector(".edit-release").value;
+        cardContainer.querySelector(".edit-release").value = '';
+
+        gamesData[index].stars = cardContainer.querySelector(".edit-stars").value;
+        cardContainer.querySelector(".edit-stars").value = '';
+
+        gamesData[index].rating = cardContainer.querySelector(".edit-rating").value + "%";
+        cardContainer.querySelector(".edit-rating").value = '';
+
+        gamesData[index].description = cardContainer.querySelector(".edit-description").value;
+        cardContainer.querySelector(".edit-description").value = '';
+
+        applyFilters();
+    }
+});
+
+//Cancel button
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('edit-cancel-button')){
+        const button = event.target;
+        const cardContainer = button.closest('.card-container');
+        
+        cardContainer.querySelector(".edit-title").value = "";
+        cardContainer.querySelector(".edit-publisher").value = "";
+        cardContainer.querySelector(".edit-platform").value = "";
+        cardContainer.querySelector(".edit-developer").value = "";
+        cardContainer.querySelector(".edit-genre").value = "";
+        cardContainer.querySelector(".edit-price").value = "";
+        cardContainer.querySelector(".edit-release").value = "";
+        cardContainer.querySelector(".edit-stars").value = "";
+        cardContainer.querySelector(".edit-rating").value = "";
+        cardContainer.querySelector(".edit-description").value = "";
+    }
+});
+
+//If you stop hovering over the card while in edit mode change back
+document.querySelectorAll('.card-container').forEach(cardContainer => {
+    cardContainer.addEventListener('mouseleave', function(event) {
+        if (event.currentTarget === cardContainer) {
+            event.currentTarget.querySelector(".edit-form").style.display = 'none';
+            event.currentTarget.querySelector(".card-content").style.display = 'block';
+            event.currentTarget.querySelector(".edit-title").value = "";
+            event.currentTarget.querySelector(".edit-publisher").value = "";
+            event.currentTarget.querySelector(".edit-platform").value = "";
+            event.currentTarget.querySelector(".edit-developer").value = "";
+            event.currentTarget.querySelector(".edit-genre").value = "";
+            event.currentTarget.querySelector(".edit-price").value = "";
+            event.currentTarget.querySelector(".edit-release").value = "";
+            event.currentTarget.querySelector(".edit-stars").value = "";
+            event.currentTarget.querySelector(".edit-rating").value = "";
+            event.currentTarget.querySelector(".edit-description").value = "";
+        }
+    });
 });

@@ -50,7 +50,7 @@ let gamesData = [
     {
         image: "assets/forzaMotorsport.jpeg",
         title: "Forza Motorsport",
-        publisher: "assets/xboxGameStudios.png",
+        publisher: "assets/microsoftxboxgamestudios.png",
         publisherText: "Microsoft Xbox Game Studios",
         platform: ["assets/xboxseriesxs.png", "assets/windows.png"],
         platformText: "XboxSeriesXS, Windows",
@@ -114,7 +114,7 @@ let gamesData = [
     {
         image: "assets/haloInfinite.jpeg",
         title: "Halo Infinite",
-        publisher: "assets/xboxGameStudios.png",
+        publisher: "assets/microsoftxboxgamestudios.png",
         publisherText: "Microsoft Xbox Game Studios",
         platform: ["assets/xboxseriesxs.png", "assets/xboxone.png", "assets/windows.png"],
         platformText: "XboxSeriesXS, XboxOne, Windows",
@@ -146,7 +146,7 @@ let gamesData = [
     {
         image: "assets/oriAndTheWillOfTheWisps.jpeg",
         title: "Ori and the Will of the Wisps",
-        publisher: "assets/xboxGameStudios.png",
+        publisher: "assets/microsoftxboxgamestudios.png",
         publisherText: "Microsoft Xbox Game Studios",
         platform: ["assets/windows.png", "assets/switch.png", "assets/xboxseriesxs.png", "assets/xboxone.png"],
         platformText: "Switch, XboxOne, XboxSeriesX/S, Windows",

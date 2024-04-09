@@ -26,7 +26,6 @@ body::before {
     background-attachment: fixed;
     overflow: hidden;
     filter: brightness(15%) contrast(1.05);
-    
 }
 
 input {
@@ -377,7 +376,7 @@ select {
 }
 
 .delete-button:hover img{
-    animation: shake 0.3s ease;
+    animation: shake 0.2s ease;
 }
 
 .card-container:hover {
@@ -544,9 +543,9 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
     gap: 30px;
+    min-height: 1000px;
 }
 
 footer p {
@@ -631,10 +630,124 @@ footer p {
     left: 10px;
 }
 
-.edit-form {
+.edit-button {
+    opacity: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 25px;
+    height: 25px;
     position: absolute;
-    top: 60px;
-    right: 0;
+    top: 15px;
+    right: 55px;
+    padding: 5px;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.edit-submit-cancel-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-top: 7px;
+}
+
+.edit-submit-button,
+.edit-cancel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 30px;
+    height: 30px;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+
+    cursor: pointer;
+}
+
+.edit-submit-button img,
+.edit-cancel-button img {
+    width: 14px;
+    height: 14px;
+
+    pointer-events: none;
+}
+
+.card-container:hover .edit-button{
+    opacity: 1;
+}
+
+.edit-button img {
+    width: 20px;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+.edit-button:hover img{
+    animation: shake 0.2s ease;
+}
+
+.edit-form {
+    display: none;
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+    padding-top: 30px;
+    padding-inline: 30px;
+
+    left: 15px;
+    top: 30px;
+    width: 42%;
+    height: 80%;
+}
+
+.edit-input-container textarea {
+    resize: none;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.edit-input-container input,
+.edit-input-container textarea {
+    width: 140px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;  
+    
+    padding-inline: 8px;
+}
+
+.edit-input-container label {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.edit-input-container {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 
