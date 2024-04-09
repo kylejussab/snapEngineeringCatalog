@@ -230,8 +230,6 @@ document.addEventListener('click', function(event) {
         gamesData[index].description = cardContainer.querySelector(".edit-description").value;
         cardContainer.querySelector(".edit-description").value = '';
 
-        console.log(gamesData[index]);
-
         applyFilters();
     }
 });
