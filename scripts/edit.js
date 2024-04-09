@@ -2,9 +2,8 @@
 
 //Add content
 document.getElementById('game-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
     
-    // Get the values from the form
     const title = document.getElementById('title').value;
     const genre = document.getElementById('genre').value;
     
@@ -54,7 +53,6 @@ document.getElementById('game-form').addEventListener('submit', function(event) 
         platform = ["assets/" + platformText + ".png"];
     }
     
-    // Create a new game object
     const newGame = {
         image: "assets/tempcardbackgroundimage.png",
         title: title,
@@ -72,17 +70,12 @@ document.getElementById('game-form').addEventListener('submit', function(event) 
         description: description
     };
     
-    // Push the new game object to the gamesData array
     gamesData.push(newGame);
     
-    // Optionally, you can clear the form fields after submission
     document.getElementById('game-form').reset();
     
-    // Optionally, you can trigger any necessary updates or re-renders
-    // For example:
     applyFilters();
 });
-
 
 //Delete content
 document.addEventListener('click', function(event) {
