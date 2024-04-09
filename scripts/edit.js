@@ -174,26 +174,26 @@ document.addEventListener('click', function(event) {
 
         if(!matchingPublisher){
             publisherText = "unknownpublisher";
-            publisher = "assets/" + publisherText + ".png";
+            publisher = "assets/" + publisherText.toLowerCase() + ".png";
         }
         else{
-            publisher = "assets/" + publisherText.replace(/\s/g, '') + ".png";
+            publisher = "assets/" + publisherText.replace(/\s/g, '').toLowerCase() + ".png";
         }
 
         if(!matchingDeveloper){
             developerText = "unknowndeveloper";
-            developer = "assets/" + developerText + ".png";
+            developer = "assets/" + developerText.toLowerCase() + ".png";
         }
         else{
-            developer = "assets/" + developerText.replace(/\s/g, '') + ".png";
+            developer = "assets/" + developerText.replace(/\s/g, '').toLowerCase() + ".png";
         }
 
         if(!matchingPlatform){
             platformText = "unknownplatform";
-            platform = ["assets/" + platformText + ".png"];
+            platform = ["assets/" + platformText.toLowerCase() + ".png"];
         }
         else{
-            platform = ["assets/" + platformText + ".png"];
+            platform = ["assets/" + platformText.toLowerCase() + ".png"];
         }
 
 
@@ -230,6 +230,8 @@ document.addEventListener('click', function(event) {
         gamesData[index].description = cardContainer.querySelector(".edit-description").value;
         cardContainer.querySelector(".edit-description").value = '';
 
+        console.log(gamesData[index]);
+
         applyFilters();
     }
 });
@@ -251,24 +253,4 @@ document.addEventListener('click', function(event) {
         cardContainer.querySelector(".edit-rating").value = "";
         cardContainer.querySelector(".edit-description").value = "";
     }
-});
-
-//If you stop hovering over the card while in edit mode change back
-document.querySelectorAll('.card-container').forEach(cardContainer => {
-    cardContainer.addEventListener('mouseleave', function(event) {
-        if (event.currentTarget === cardContainer) {
-            event.currentTarget.querySelector(".edit-form").style.display = 'none';
-            event.currentTarget.querySelector(".card-content").style.display = 'block';
-            event.currentTarget.querySelector(".edit-title").value = "";
-            event.currentTarget.querySelector(".edit-publisher").value = "";
-            event.currentTarget.querySelector(".edit-platform").value = "";
-            event.currentTarget.querySelector(".edit-developer").value = "";
-            event.currentTarget.querySelector(".edit-genre").value = "";
-            event.currentTarget.querySelector(".edit-price").value = "";
-            event.currentTarget.querySelector(".edit-release").value = "";
-            event.currentTarget.querySelector(".edit-stars").value = "";
-            event.currentTarget.querySelector(".edit-rating").value = "";
-            event.currentTarget.querySelector(".edit-description").value = "";
-        }
-    });
 });
